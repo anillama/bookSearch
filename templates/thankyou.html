@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}Thank You {% endblock %}
+
+{% block body %}
+
+<h3 class="title">Thank You for your review </h3>
+<a class="title" href="{{url_for('logout')}}">LogOut</a> </br></br>
+<a class="title" href="{{url_for('success')}}">Back to search </a> </br>
+
+{% endblock %}

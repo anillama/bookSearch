@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %} {% endblock %}</title>
+	<style>
+		/*this one is for signup */
+		/*Begin of signup */
+		#signup{
+			border: 1px solid black;
+			background-color: #ff8533;
+			width: 50%;
+			padding: 2% 0 8% 20%;
+			margin: 5% 0 10% 15%;
+			color: white;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 110%;
+		}
+		#signup .userInfo > input{
+			width: 60%;
+			padding: 2% 2%;
+			margin-top: 1%;
+			font-size: 95%;
+		}
+		.bttn {
+			font-size: 120%;
+			padding: 2% 10%;
+			margin-top: 1%;
+		}
+		.bttn:hover{
+			color: white;
+			background-color: #3366ff;
+		}
+		/*password reqried */
+		
+		/*End of signup */
+		/*
+		Start of login design for index.html
+		*/
+		#log-in{
+			border: 1px solid black;
+			background-color: #ff8533;
+			width: 50%;
+			padding: 5% 0 10% 20%;
+			margin: 5% 0 0 15%;
+		}
+		#regis{
+			font-size: 100%;
+			color: white;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		.userName{
+			font-size: 120%;
+			width: 50%;
+			padding: 2%;
+			margin: 2%;
+		}
+		.btn{
+			font-size: 120%;
+			width: 55%;
+			padding: 2%;
+			margin: 2%;
+		}
+		.btn:hover{
+			color: white;
+			background-color: #3366ff;
+		}
+		.logo {
+			font-size: 140%;
+			text-align: center;
+			font-family: Arial, Helvetica, sans-serif;
+			color: white;
+		}
+		.alert-message{
+			color: white;
+			margin-top: .2%;
+		}
+		/*
+			Starting for profile page or success.html
+		*/
+		#profile {
+			margin-left: 20%;
+		}
+		select:invalid{
+			color: gray
+		}
+		.selection{
+			width: 20%;
+			padding: 1.4%
+		}
+		.btttn {
+			width: 18%;
+			font-size: 120%;
+			padding: 1%;
+			background-color: #ff8533;
+			color: white;
+		}
+		.selection + input{
+			font-size: 120%;
+			width: 30%;
+			padding: 1%;
+		}
+		.logout {
+			float: right;
+			margin-top: 2%;
+			margin-right: 2%;
+			margin-bottom: 10%;
+		}
+		.title {
+			text-align: center;
+			margin-top: 3%;
+		}
+		.table {
+			width: 100%;
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+		}
+		.table a{
+			text-decoration: none;
+			display: block;
+		}
+		td, th {
+			border: 1px solid #dddddd;
+			text-align: left;
+			padding: 8px;
+		}
+		tr:nth-child(even){
+			background-color: #dddddd
+		}
+		.warning {
+			text-align: center;
+			background-color: red;
+			margin: 0 23% 1% 20%;
+			padding: .1% .1%;
+			color: white;
+			font-size: 100%;
+
+		}
+	/*
+		Book info books.html
+	*/
+	.bookinfo {
+		text-align: left;
+		}
+	textarea{
+		margin-right: 100%;
+		margin-bottom: 1%;
+		margin-top: 1%;
+		font-size: 100%;
+		font-family: arial, sans-serif;
+	}
+	textarea:focus {
+		outline: none;
+	}
+	/*BOX or comment */
+
+	.box-2 {
+		display: flex;
+		border: 1px solid gray;
+		padding: 2% 2%;
+		width: 40%;
+		border-radius: 20px 50px;
+		margin-top: 1%;
+	}
+
+	</style>
+	
+</head>
+<body>
+	
+	{% block body %}
+
+	{% endblock %}
+
+</body>
+</html>

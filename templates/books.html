@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %} Success {% endblock %}
+
+{% block body %}
+<a class="logout" href="{{url_for('logout')}}">LogOut</a> 
+</br>
+</br>
+<div class="bookinfo">
+<h3>Book Info </h3>
+		<p>ISBN :{{data.isbn}} </p>
+		<p>Title :{{data.title}} </p>
+		<p>Author :{{data.author}} </p>
+		<p>Year :{{data.year}} </p>
+		{%if average %}
+			Average Review : {{ average[0] }}
+		{%endif%}
+	</br>
+	{%if count[0] < 3%}
+	<a href="{{url_for('comment')}}">Leave a review </a></br></br>
+	{%else%}
+	<p>YOU CANNOT COMMENT SAME BOOK MORE THAN 3 TIMES. THANK YOU </p>
+	<p>Please look for other books. Thank You</p>
+	<a class="title" href="{{url_for('success')}}">Back to search </a> </br>
+	{%endif%}
+	
+	<div class="box-1">
+		{%for review in reviews %}
+		<div class="box-2">{{review.comments }}</div>
+		{%endfor%}
+	</div>
+	{% if message %}
+		{{message}}
+	{%endif%}
+
+	
+
+</div>
+
+{% endblock %}

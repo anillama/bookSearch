@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block title %} Success {% endblock %}
+
+{% block body %}
+	<a class="logout" href="{{url_for('logout')}}">LogOut</a> </br>
+	<div class="title">
+		<h3>Books</h3>
+		<p>Welcome </p>
+	</br>
+	</div>
+	<div id="profile">
+	<form action="{{url_for('book')}}" method="post">
+		<select class="selection" name="userSelect" required>
+			<option value="" disabled selected hidden>CATEGORY</option>
+			<option value="isbn">ISBN</option>
+			<option value="title">TITLE</option>
+			<option value="author">AUTHOR</option>
+			<option value="year">YEAR</option>
+			<input type="text" name="search" placeholder="Search...." required="">
+		</select>
+		<button class="btttn">Search</button>
+	</form>
+	</div>
+	</br>
+	{%if message %}
+	<div class="warning"><h3>
+		{{message}}
+	</h3></div>
+	{%endif%}
+	{% if data %}
+	<table border="1" class="table">
+		<tr>
+			<th>ISBN</th>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Year</th>
+		</tr>
+		
+		{%for books in data %}
+			<tr>
+				<td><a href="{{url_for('booklist', book_isbn=books.isbn, authorN=books.author)}}">{{books.isbn}}</a></td>
+				<td><a href="{{url_for('booklist', book_isbn=books.isbn, authorN=books.author)}}">{{books.title}}</a></td>
+				<td><a href="{{url_for('booklist', book_isbn=books.isbn, authorN=books.author)}}">{{books.author}}</a></td>
+				<td><a href="{{url_for('booklist', book_isbn=books.isbn, authorN=books.author)}}">{{books.year}}</a></td>
+			</tr>
+		{%endfor%}
+	</table>
+		{%endif%}
+	{% if dataPosition %}
+	<table border="1" class="table">
+		<tr>
+			<th>ISBN</th>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Year</th>
+		</tr>
+		
+		{%for books in dataPosition %}
+			<tr>
+				<td><a href="{{url_for('booklist', book_isbn=books.isbn, authorN=books.author)}}">{{books.isbn}}</a></td>
+				<td><a href="{{url_for('booklist', book_isbn=books.isbn, authorN=books.author)}}">{{books.title}}</a></td>
+				<td><a href="{{url_for('booklist', book_isbn=books.isbn, authorN=books.author)}}">{{books.author}}</a></td>
+				<td><a href="{{url_for('booklist', book_isbn=books.isbn, authorN=books.author)}}">{{books.year}}</a></td>
+			</tr>
+		{%endfor%}
+	</table>
+		{%endif%}
+
+{% endblock %}

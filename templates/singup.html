@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %} Signup {% endblock %}
+
+{% block body %}
+	<div id="signup">
+		<h4 class="logo">{{message}}</h4>
+		<h4 class="logo"> SIGNUP </h4>
+		<div class="passrequeried">
+			<h4>Password must contain the following</h4>
+			A lowercase letter </br>
+			A capital(uppercase) letter </br>
+			A number</br>
+			Minimum 8 characters</br>
+		</div>
+		<form class="userInfo" action="{{ url_for('signup')}}" method="post">
+			<label for="firstName">First Name </label></br>
+			<input type="text" name="firstN" placeholder="First Name" required=""></br>
+			<label for="lastName">Last Name </label></br>
+			<input type="text" name="lastN" placeholder="Last Name" required=""></br>
+			<label for="eamil">eamil </label></br>
+			<input type="email" name="email" placeholder="email" required=""></br>
+			<label for="password">Password </label></br>
+			<input type="password" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title = "Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"required=""></br>
+			<label for="confirmPassword">Confirm Password </label></br>
+			<input type="password" name="confirmPassword" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title = "Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"required=""></br>
+			<button class="bttn">Submit </button>
+		</form>
+		
+	</div>
+
+{% endblock %}

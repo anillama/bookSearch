@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %} Welcome {% endblock %}
+
+{% block body %}
+
+	<div id="log-in">
+		<h3 class="alert-message">{{message}} </h3>
+		<h4 class="logo"> LOGIN </h4>
+		<form class="login" action="/" method="post">
+			<input class= "userName" type="email" name="userName" placeholder="User Name" required=""></br>
+			<input class= "userName" type="password" name="userPassword" placeholder="password" required=""></br>
+			<button class="btn">LOGIN</button></br>
+			<p id="regis">
+				 Not registered?
+				<a href="{{ url_for('signup') }}">Create an account</a>
+				</p>
+		</form>
+		
+	</div>
+	
+{% endblock %}
